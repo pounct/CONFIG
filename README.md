@@ -24,8 +24,8 @@ public class ConfigServerApplication {
 	- server port
  	- application name
   	- directory of all configurations files
-  	- application.yml for globals configurations
-  	- service-name.yml for his specific config
+	  	- application.yml for globals configurations
+	  	- service-name.yml for his specific config
   	  
 <pre>
 <code>
