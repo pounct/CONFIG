@@ -50,8 +50,8 @@ spring:
 
   <img src="images/Captura de pantalla1.png"/>
 
-the service is in register just with the dependence
-but we can enable discovry explicitment
+the service is in register service just with the dependency consul-descovery
+but we can enable discovery explicitment
 
 <pre>
   <code>
