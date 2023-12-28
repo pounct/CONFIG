@@ -50,8 +50,16 @@ spring:
 
   <img src="images/Captura de pantalla1.png"/>
 
-the service is in register service just with the dependency consul-descovery
-but we can enable discovery explicitment
+- the service is in register service just with the dependency consul-discovery
+- but we can enable discovery explicitment because in this version of consul
+	is enable as default...
+- for all service we need to register at consul discovery sevice with:
+
+<pre>
+  <code>
+@EnableDiscoveryClient
+  </code>
+</pre>
 
 <pre>
   <code>
