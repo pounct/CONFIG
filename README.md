@@ -39,9 +39,6 @@ spring:
     config:
       server:
         git:
-          uri:
-            server:
-
-
+          uri: https://github.com/pounct/CONFIG/tree/main/config-directory
 </code>
 </pre>
