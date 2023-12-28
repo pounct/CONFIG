@@ -81,3 +81,17 @@ public class ConfigServerApplication {
   </code>
 </pre>
 
+and we can consult ower configuration
+samples:
+<pre>
+  <code>
+	  http://localhost:8888/application/default
+	  http://localhost:8888/challenge/default
+	  http://localhost:8888/challenge/dev
+	  http://localhost:8888/challenge/prod
+  </code>
+</pre>
+<img src="cofglob.png"/>
+<img src="cofcha1.png"/>
+<img src="cofcha2.png"/>
+<img src="cofcha3.png"/>
