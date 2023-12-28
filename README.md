@@ -39,10 +39,15 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/pounct/CONFIG/tree/main/config-directory
+          uri: https://github.com/pounct/CONFIG
 </code>
 </pre>
 
 - We can use local directory using uri: file://C:/.../config-directory
+
+- And start config server service (here port:8888)
+- in consul :
+
+  <img src="images/Captura de pantalla1.png"/>
 
 
