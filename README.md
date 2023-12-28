@@ -42,3 +42,7 @@ spring:
           uri: https://github.com/pounct/CONFIG/tree/main/config-directory
 </code>
 </pre>
+
+- We can use local directory using uri: file://C:/.../config-directory
+
+
