@@ -34,6 +34,14 @@ server:
 spring:
   application:
     name: config-server
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri:
+            server:
+
 
 </code>
 </pre>
