@@ -91,7 +91,7 @@ samples:
 	  http://localhost:8888/challenge/prod
   </code>
 </pre>
-<img src="cofglob.png"/>
-<img src="cofcha1.png"/>
-<img src="cofcha2.png"/>
-<img src="cofcha3.png"/>
+<img src="images/cofglob.png"/>
+<img src="images/cofcha1.png"/>
+<img src="images/cofcha2.png"/>
+<img src="images/cofcha3.png"/>
