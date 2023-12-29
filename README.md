@@ -112,6 +112,31 @@ spring:
 </pre>
 
 and to test that it is looking for its configuration from config_server we will create an endpoint with RestController as follows:
+<pre>
+  <code>
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+public class ChallengeTestConfigRestController {
+    @Value("${challenge.parameter.test}")
+    private String challengeParameterTestConfig;
+    @Value("${global.parameter.test}")
+    private String globalParameterTestConfig;
+
+
+    @GetMapping("/getParamsTest")
+    public Map<String,String> myConfiguration(){
+        return Map.of("global.parameter.test",globalParameterTestConfig,
+                "challenge.parameter.test",challengeParameterTestConfig);
+    }
+}
+  </code>
+</pre>	  
+
 
 <img src="images/Captura de pantalla2.png"/>
 <img src="images/challengetest.png"/>
