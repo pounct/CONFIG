@@ -1,5 +1,9 @@
 # CONFIG
-How to centralize the configuration with spring-cloud-config server
+- How to centralize the configuration with spring-cloud-config server
+- in this section we have :
+- a config server service
+- a discovery service(CONSUL)
+- and Ower business logic service challenge for testing a configuration 
 
 create a config service
 <pre>
