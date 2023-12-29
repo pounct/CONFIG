@@ -95,3 +95,25 @@ samples:
 <img src="images/cofcha1.png"/>
 <img src="images/cofcha2.png"/>
 <img src="images/cofcha3.png"/>
+
+- now that everything is fine
+- we must indicate to each service where to look for its global and specific configuration (in our case: config_server)
+- Before there was only the internal configuration "application.yml/.properties" and now in its local configuration there is a dependency towards an external one in our case the challenge service has the property:
+<pre>
+  <code>
+server:
+   port:9001
+spring:
+   application:
+     name:challenge
+   config:
+     import:optional:configserver:http://localhost:8888
+  </code>
+</pre>
+
+and to test that it is looking for its configuration from config_server we will create an endpoint with RestController as follows:
+
+<img src="images/Captura de pantalla2.png"/>
+<img src="images/challengetest.png"/>
+
+when we use the values of the configuration file we use the @value annotation
