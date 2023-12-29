@@ -142,3 +142,73 @@ public class ChallengeTestConfigRestController {
 <img src="images/challengetest.png"/>
 
 when we use the values of the configuration file we use the @value annotation
+
+# hot restart 
+- or change parameters of configuration without restart a service:
+- When changes are made to the configurations, the service receives its new configuration without restarting the service.
+- I'm going to create a special GITHUB repository for the configuration and I'm calling it :
+- "config-directory" and we'll make a few changes.
+<img src="images/repo.png"/>
+<img src="images/repopush.png"/>
+  
+And I set the properties of config_server ..git.uri of course;
+
+<pre>
+  <code>
+server.port=8888
+spring.application.name=config-server
+spring.cloud.config.server.git.uri=https://github.com/pounct/config-directory
+  </code>
+</pre>
+
+- But that's not enough if we run the getConfigTest request we will see that the values have not changed.
+- And this is where we need REFRESH from ACTUATOR by adding the @RefreshScope annotation to the config
+
+<pre>
+  <code>
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+@RefreshScope
+public class ChallengeTestConfigRestController {
+
+  </code>
+</pre>
+
+and don't forget to add the actuator endpoint refresh
+* -> to see them all
+but in our case we need "/actuator/refresh"
+
+management.endpoints.web.exposure.include=*
+
+<pre>
+  <code>
+server:
+   port: 9001
+spring:
+   application:
+     name: challenge
+   config:
+     import: optional:configserver:http://localhost:8888
+management:
+   endpoints:
+     web:
+       exposure:
+         include: '*'
+
+  </code>
+</pre>
+
+- now after these changes we start again.
+- we make a change in the configuration
+- and make a post POST (like postman client) To localhost:9001/actuator/refresh
+- we can see just new version changed like:
+
+  <img src="images/refreshactuator.png"/>
+  
+And if we do in refresh on the /getConfigTest page we see the changes without needing to restart...
